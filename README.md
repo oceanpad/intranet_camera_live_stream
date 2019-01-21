@@ -1,11 +1,11 @@
-# create python3 virtualenv
-virtualenv -p python3 venv
-
-# install requirement
+### install requirement
 pip install -r requirements.txt
 
-# run script to send intranet camera image to remote server, need to change the url to your own url
+### run server on public server
+python run.py
+
+### run script to send intranet camera image to remote server
 python post_image.py
 
-# run server on public server
-python run.py
+### access live feed
+http://your-ip:5000/live
