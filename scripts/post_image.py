@@ -2,7 +2,8 @@ import cv2
 import requests
 import time
 
-camera = cv2.VideoCapture(1)
+# camera = cv2.VideoCapture(1)  # webcam
+camera = cv2.VideoCapture('rtsp://192.168.1.234/media/live/1/1')
 if not camera.isOpened():
     raise RuntimeError('Could not start camera.')
 
