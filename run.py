@@ -25,6 +25,10 @@ def video_feed():
 def live():
     return Response(gen_live(),mimetype='multipart/x-mixed-replace; boundary=frame')
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
 def allowed_file(filename):
     ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -60,4 +64,4 @@ def gen_live():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=False,  port=5000, threaded=True)
+    app.run(host='0.0.0.0', debug=True,  port=5000, threaded=True)
